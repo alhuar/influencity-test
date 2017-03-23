@@ -8,8 +8,10 @@ const routes     = require('./routes/routes');
 const app        = express();
 const mongoose   = require('mongoose');
 require('dotenv').config();
-// mongoose.connect('mongodb://localhost/scrap-test');
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.Promise = global.Promise;
+if (process.env.NODE_ENV !== 'test') {
+  mongoose.connect(process.env.MONGODB_URI);
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +23,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
 routes(app);
 
 app.use(function(req, res, next) {

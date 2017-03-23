@@ -19,6 +19,7 @@ module.exports = {
     const username = req.params.username;
     profileScrapper(username)
       .then((result) => {
+        //  TODO
         const date = new time.Date();
         const criteria = {date: date.setTimezone('Europe/Amsterdam').toString()}
         criteria.data = {number_of_tweets, number_of_followers, number_of_following, bio, image_path} = result
@@ -29,6 +30,6 @@ module.exports = {
           res.status(200).json(twit);
       })
     })
-      .catch((err) => next(err))
+      .catch((err) => res.status(404).json('Sorry, no user matches the username provided'))
   }
 }
