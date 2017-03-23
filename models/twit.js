@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const time = require('time');
-const date = new time.Date();
+const mongoose   = require('mongoose');
+const Schema     = mongoose.Schema;
+const time       = require('time');
+const date       = new time.Date();
+
 const TwitSchema = new Schema({
   date: {type: String, default: new time.Date().setTimezone('Europe/Amsterdam').toString()},
   data: {
@@ -15,7 +16,6 @@ const TwitSchema = new Schema({
 })
 
 // , {timestamps: {createdAt: "date", updatedAt: false }})
-
 
 const Twit = mongoose.model('Twit', TwitSchema);
 module.exports = Twit;
