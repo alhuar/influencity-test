@@ -1,32 +1,6 @@
 module.exports = missingProfile = `
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Language" content="en-us">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Twitter / ?</title>
-  <link href="https://abs.twimg.com/favicons/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link rel="stylesheet" href="https://abs.twimg.com/errors/fullscreen_errors-91ecc652e4fafac52ce8a1a8a181ad24.css">
-<style type="text/css">
-:root .suggested-tweet-stream-container,
-:root .stream-tweet[label="promoted"],
-:root .stream-item[data-item-type="tweet"][data-item-id*=":"],
-:root .stream-item-group-start[label="promoted"],
-:root .promotion,
-:root .promoted-tweet[data-disclosure-type="promoted"],
-:root .promoted-trend,
-:root .promoted-account,
-:root .is-promoted,
-:root .has-profile-promoted-tweet,
-:root .promoted-tweet,
-:root .tweet[data-card2-type="promo_website"],
-:root .text-ad-links,
-:root .text-ads,
-:root .text_ads,
-:root .text_ad,
-:root .textAd,
-:root .text-ad
-{ display: none !important; }</style></head>
+
 <body cz-shortcut-listen="true">
   <div class="topbar js-topbar">
     <div class="global-nav" data-section-term="top_nav">
