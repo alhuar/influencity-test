@@ -1,4 +1,4 @@
-const {scrapperMock} = require('../scrapper');
+const {twitterScrapper} = require('../scrapper');
 const correctProfile = require('./mocks/twitter_profile_mock');
 const missingProfile = require('./mocks/no_twitter_profile');
 const assert = require('assert');
@@ -10,12 +10,12 @@ const expectedOutput = { number_of_tweets: '181',
 
 describe('Scrapper', () => {
   it('scrapps a twitter profile and returns specific data', ()=>{
-    scrapperMock(correctProfile).then((scrappedProfile)=>{
+    twitterScrapper(correctProfile).then((scrappedProfile)=>{
        assert.deepEqual(scrappedProfile, expectedOutput);
     }).catch((err)=> console.log(err));
   });
   it('returns an error when username doesn´t exist', ()=>{
-    scrapperMock(missingProfile).then((scrappedProfile)=>{
+    twitterScrapper(missingProfile).then((scrappedProfile)=>{
     }).catch((err)=> assert(err === "Wrong Username"));
   });
 });

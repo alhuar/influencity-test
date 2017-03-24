@@ -2,6 +2,7 @@ const mongoose   = require('mongoose');
 const Schema     = mongoose.Schema;
 const time       = require('time');
 const date       = new time.Date();
+mongoose.Promise = global.Promise;
 const TwitSchema = new Schema({
   date: {type: String, default: new time.Date().setTimezone(process.env.TIMEZONE).toString()},
   data: {

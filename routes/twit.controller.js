@@ -1,5 +1,5 @@
 const Twit            = require('../models/twit');
-const profileScrapper = require('../scrapper').scrapper;
+const {twitterScrapper} = require('../scrapper');
 const time            = require('time')
 module.exports = {
   listAll(req, res, next){
@@ -15,7 +15,8 @@ module.exports = {
 
   scrapProfile(req, res, next){
     const username = req.params.username;
-    profileScrapper(username)
+    const url = process.env.TWITTER_URL + username
+    twitterScrapper(url)
     .then((result) => {
         const criteria = {
           date: new time.Date().setTimezone(process.env.TIMEZONE).toString(),
