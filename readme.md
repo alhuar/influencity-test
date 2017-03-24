@@ -6,6 +6,7 @@
 
 * Download this repo
 * Run "npm install"
+* Run "npm start" to start the application
 * Run "npm run test" to execute the test suite
 ____
 #### How to use:
