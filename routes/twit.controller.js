@@ -1,6 +1,6 @@
-const Twit            = require('../models/twit');
-const {twitterScrapper} = require('../scrapper');
-const time            = require('time')
+const Twit              = require('../models/twit');
+const {twitterScrapper} = require('../modules/scrapper');
+const time              = require('time')
 module.exports = {
   listAll(req, res, next){
     Twit.find({},{__v: 0})

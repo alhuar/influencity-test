@@ -1,7 +1,7 @@
-const {twitterScrapper} = require('../scrapper');
-const correctProfile = require('./mocks/twitter_profile_mock');
-const missingProfile = require('./mocks/no_twitter_profile');
-const assert = require('assert');
+const {twitterScrapper} = require('../modules/scrapper');
+const correctProfile    = require('./mocks/twitter_profile_mock');
+const missingProfile    = require('./mocks/no_twitter_profile');
+const assert            = require('assert');
 const expectedOutput = { number_of_tweets: '181',
   number_of_following: '82',
   number_of_followers: '845',
