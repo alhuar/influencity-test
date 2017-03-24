@@ -38,7 +38,14 @@ describe('Twit Controller', ()=>{
       }).catch(err => done(err))
     })
   })
-
+  it('returns an error message when the username doesn´t exist', (done)=>{
+    request(app).get('/api/user/somenamethatiswrong').end((err, res) =>{
+      assert(res.status === 404);
+      assert(res.body.error === 'Wrong Username')
+      assert(res.body.message === 'Sorry, no user matches the username provided');
+      done();
+    })
+  })
   it('returns a list of profiles scrapped', (done)=>{
     request(app).get('/api/log/list').end((err, res) =>{
       Twit.find({},{__v: 0}).then(twits =>{
@@ -46,14 +53,6 @@ describe('Twit Controller', ()=>{
         assert(res.body.length === 1)
         done();
       }).catch(err => done(err))
-    })
-  })
-  it('returns an error message when the username doesn´t exist', (done)=>{
-    request(app).get('/api/user/somenamethatiswrong').end((err, res) =>{
-      assert(res.status === 404);
-      assert(res.body.error === 'Wrong Username')
-      assert(res.body.message === 'Sorry, no user matches the username provided');
-      done();
     })
   })
 });
