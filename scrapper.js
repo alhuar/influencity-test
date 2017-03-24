@@ -15,5 +15,3 @@ module.exports = scrapper = (username) => {
     })
   })
 }
-
-// scrapper('djljlhdjhfdjhfsd').then((result) => console.log(result)).catch((err)=> console.log('no profile'))

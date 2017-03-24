@@ -4,11 +4,10 @@ const logger     = require('morgan');
 const bodyParser = require('body-parser');
 const Xray       = require('x-ray');
 const xray       = Xray();
-const routes     = require('./routes/routes');
+const api_routes = require('./routes');
 const app        = express();
 const mongoose   = require('mongoose');
 require('dotenv').config();
-mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV !== 'test') {
   mongoose.connect(process.env.MONGODB_URI);
 }
@@ -24,7 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-routes(app);
+api_routes(app);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

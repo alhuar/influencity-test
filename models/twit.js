@@ -4,7 +4,7 @@ const time       = require('time');
 const date       = new time.Date();
 
 const TwitSchema = new Schema({
-  date: {type: String, default: new time.Date().setTimezone('Europe/Amsterdam').toString()},
+  date: {type: String, default: new time.Date().setTimezone(process.env.TIMEZONE).toString()},
   data: {
     username: String,
     number_of_followers: String,
