@@ -10,7 +10,8 @@ scrapper = (username) => {
     number_of_followers: 'a[data-nav=followers] span.ProfileNav-value',
     bio: 'p.ProfileHeaderCard-bio',
     image_path: 'img.ProfileAvatar-image@src'})((err, scrappedProfile)=> {
-      if (err || scrappedProfile.body_content !== undefined ) reject(err);
+      if (err) reject(err);
+      if (scrappedProfile.body_content !== undefined ) reject("Wrong Username");
       resolve(scrappedProfile)
     })
   })

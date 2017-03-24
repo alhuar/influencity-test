@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
 
 before((done) =>{
   mongoose.connect('mongodb://localhost/influencity_scrapper_test');
@@ -9,9 +8,8 @@ before((done) =>{
     });
 })
 
-beforeEach((done)=>{
+before((done)=>{
   const { twits } = mongoose.connection.collections;
-
   twits.drop()
     .then(()=> done())
     .catch(()=> done());
