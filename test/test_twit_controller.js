@@ -14,7 +14,7 @@ describe('Twit Controller', ()=>{
         })
       })
     })
-  })
+  });
   it('doesn´t add a new record when it already exists', ()=>{
     let username = "influencity"
     Twit.count().then((count)=>{
@@ -26,4 +26,7 @@ describe('Twit Controller', ()=>{
       })
     })
   })
-})
+  it('changes status code when database is not empty', ()=>{
+    request(app).get('/api/log/list').expect(200);
+  })
+});

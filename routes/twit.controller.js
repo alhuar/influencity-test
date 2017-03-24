@@ -1,5 +1,5 @@
 const Twit            = require('../models/twit');
-const profileScrapper = require('../scrapper');
+const profileScrapper = require('../scrapper').scrapper;
 const time            = require('time')
 
 module.exports = {
